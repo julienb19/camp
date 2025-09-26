@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>4B - Blas Ilyan</title>
+  <link rel="stylesheet" href="./eval.css">
+  <link href="https://fonts.googleapis.com/css2?family=Alice&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+     <header id="header" class="header">
+        <div class="container">
+            <div class="logo">
+            <h6>Défis</h6>  
+            </div>
+            <div class="burger-menu">
+                <button class="burger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="planning.html">Planning</a></li>
+                        <li><a href="eval.html">Évaluations</a></li>
+                        <li><a href="devoir.html">Devoirs</a></li>
+                        <li><a href="sortie.html">Sortie scolaire</a></li>
+                        <li><a href="index.html">Acceuil</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+   <div class="container">
+  <div class="titre">
+    <h1>Mes Évaluations</h1>
+    <div class="image">
+        <div class="grid">
+            <div class="grid-item">
+               <img width="400px" src="./img/Study 📚.jpg" alt="image">
+            </div>
+        </div>   
+    </div>
+
+   <section class="intro">
+  <div class="intro-container">
+    <h2>Cap sur les défis !</h2>
+    <p>
+      Ici, je rassemble toutes mes <strong>évaluations</strong>, comme des épreuves 
+      à franchir sur le chemin de l’aventure scolaire.
+    </p>
+    <p>
+      Chaque note est un <strong>indice</strong> qui montre mes progrès, mes réussites, 
+      mais aussi les zones où je dois encore m’entraîner.
+    </p>
+    <p>
+      Cet espace, c’est un peu mon carnet de route : il trace ma progression 
+      et me rappelle que chaque défi est une chance d’apprendre.
+    </p>
+  </div>
+</section>
+
+<section class="evaluations-section">
+  <div class="evaluations-container">
+    <div class="evaluation-card">
+      <a href="./img/fr01.pdf" target="_blank">
+        <img src="./img/fr01.png" alt="Aperçu évaluation Français 12/09">
+        <h3>Français</h3>
+      </a>
+    </div>
+
+    <div class="evaluation-card">
+      <a href="./img/fr02.pdf" target="_blank">
+        <img src="./img/fr02.png" alt="Aperçu évaluation Français 15/09">
+        <h3>Français</h3>
+      </a>
+    </div>
+
+    <div class="evaluation-card">
+      <a href="./img/fr03.pdf" target="_blank">
+        <img src="./img/fr03.png" alt="Aperçu évaluation Français 18/09">
+        <h3>Français</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="note-point">
+  <div class="note-container">
+    <div class="note-card">
+      <img src="./img/pc01.jpeg" alt="Physique Chimie" onclick="openLightbox(this)">
+      <h3>phisique chimie</h3>
+    </div>
+    <div class="note-card">
+      <img src="./img/frnote.jpeg" alt="Français" onclick="openLightbox(this)">
+      <h3>français</h3>
+    </div>
+    <div class="note-card">
+      <img src="./img/mathnote.jpg" alt="Mathématiques" onclick="openLightbox(this)">
+      <h3>mathématique</h3>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <span class="prev">&#10094;</span>
+  <img class="lightbox-content" id="lightbox-img">
+  <span class="next">&#10095;</span>
+</div>
+
+
+<footer>
+    <div class="container">
+        <div class="grid">
+            <p>&copy; 2025 Ilyan. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="eval.js"></script>
+</body>
+</html>
