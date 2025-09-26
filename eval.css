@@ -1,0 +1,546 @@
+/* Style de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Alice", serif;
+}
+
+/* Global */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0 auto;
+  color: #333;
+  background-color: #f5f5f5;
+  padding-top: 70px; /* Évite que le contenu soit caché sous le header */
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #f96a6d, #ec4b86);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo h6{
+  font-size: 18px;
+  color: rgb(237, 238, 239);
+  font-family: 'Alice', serif;
+}
+
+/* Burger centré */
+.burger-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* pour les barres absolues */
+}
+
+.burger {
+  cursor: pointer;
+  width: 35px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  padding: 0;
+  position: relative; /* important */
+  z-index: 1100;
+}
+
+.burger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  position: relative; /* pour animation */
+}
+
+/* Animation croix */
+.burger.open .bar:nth-child(1) {
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform-origin: center;
+}
+
+.burger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open .bar:nth-child(3) {
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform-origin: center;
+}
+
+/* Menu de navigation */
+.nav-menu {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(246, 139, 139, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: top 0.5s ease;
+  z-index: 1000;
+}
+
+.nav-menu.open {
+  top: 0;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Par défaut, en colonne pour les petits écrans */
+  align-items: center;
+}
+
+.nav-menu li {
+  margin: 20px 0;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #f38399;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.container h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Alice', serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+
+  /* Dégradé fun */
+  background:#ed5979;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.image {
+  display: flex;
+  justify-content: center;   /* centre l’image horizontalement */
+  align-items: center;       /* centre verticalement si besoin */
+  padding: 40px 20px;
+}
+
+.image .grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image .grid-item img {
+  width: 100%;
+  max-width: 400px; /* limite la taille */
+  border-radius: 20px; /* coins arrondis */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* ombre moderne */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover; /* garde un rendu clean */
+}
+
+/* Effet au survol */
+.image .grid-item img:hover {
+  transform: scale(1.05); /* léger zoom */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); /* ombre plus marquée */
+}
+
+/* intro */
+
+.intro {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 20px 30px;
+  text-align: center;
+  font-family: "Alice", serif;
+  color: #2c3e50; /* texte plus élégant et contrasté */
+}
+
+.intro h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #ed5979;  /* bleu moderne */
+  letter-spacing: 1px;
+}
+
+.intro p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #444; /* légèrement plus clair que le titre */
+}
+
+.intro strong {
+  color: #f15f86; /* met en valeur les mots importants */
+}
+
+/* Section des évaluations */
+
+.evaluations-section {
+  width: 100%;
+  padding: 60px 30px;
+  background: #fff;
+}
+
+.evaluations-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* grille fluide */
+  gap: 25px;
+  justify-items: center;
+}
+
+.evaluation-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  max-width: 240px;
+  width: 100%;
+  position: relative;
+}
+
+.evaluation-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover; /* pour recadrer joliment les aperçus */
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.evaluation-card h3 {
+  font-family: "Alice", serif;
+  font-size: 1rem;
+  margin: 12px 0 15px;
+  color: #ec4b86;
+  letter-spacing: 0.5px;
+}
+
+.evaluation-card a {
+  text-decoration: none; /* supprime le soulignement */
+  color: inherit;        /* garde la couleur du texte du parent */
+}
+
+/* Effet Netflix : zoom + ombre colorée */
+.evaluation-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 35px rgba(236, 75, 134, 0.25);
+}
+
+.evaluation-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Petit ruban style "badge" en haut à gauche */
+.evaluation-card::before {
+  content: "Évaluation";
+  position: absolute;
+  top: 10px;
+  left: -35px;
+  background: linear-gradient(135deg, #f96a6d, #ec4b86);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 5px 40px;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* note container style */
+
+.note-point {
+  width: 100%;
+  padding: 60px 30px;
+  background: #fff;
+}
+
+.note-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* grille fluide */
+  gap: 25px;
+  justify-items: center;
+}
+
+.note-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  max-width: 240px;
+  width: 100%;
+  position: relative;
+}
+
+.note-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover; /* pour recadrer joliment les aperçus */
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.note-card h3 {
+  font-family: "Alice", serif;
+  font-size: 1rem;
+  margin: 12px 0 15px;
+  color: #1190b3;
+  letter-spacing: 0.5px;
+}
+
+/* Effet Netflix : zoom + ombre colorée */
+.note-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 35px rgba(236, 75, 134, 0.25);
+}
+
+.note-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Petit ruban style "badge" en haut à gauche */
+.note-card::before {
+  content: "note";
+  position: absolute;
+  top: 10px;
+  left: -35px;
+  background: linear-gradient(135deg, #64d2fa, #1f8cb0);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 5px 40px;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none; /* caché par défaut */
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.lightbox .prev,
+.lightbox .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  user-select: none;
+  padding: 20px;
+  transform: translateY(-50%);
+}
+
+.lightbox .prev {
+  left: 20px;
+}
+
+.lightbox .next {
+  right: 20px;
+}
+
+.lightbox .prev:hover,
+.lightbox .next:hover {
+  color: #f15f86;
+}
+
+/* === FOOTER === */
+footer {
+  width: 100%;
+  background: linear-gradient(135deg, #f96a6d, #ec4b86);
+  color: white;
+  padding: 40px 20px;
+  font-family: "Alice", serif;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  text-align: center;
+}
+
+footer .grid__item strong {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+
+footer .contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer .contact li {
+  margin: 10px 0;
+}
+
+footer .contact a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+footer .contact a:hover {
+  color: #ffe1ec; /* couleur plus claire au survol */
+}
+
+footer .copyright p {
+  font-size: 0.9rem;
+  color: #fddde6;
+}
+
+
+
+/* Media query pour les grands écrans */
+@media screen and (min-width: 750px) {
+  .burger {
+    display: none; /* Cacher le burger sur grands écrans */
+  }
+
+  .nav-menu {
+    position: static; /* Position normale pour le menu */
+    background-color: transparent; /* Fond transparent */
+    height: auto; /* Hauteur automatique */
+    flex-direction: row; /* Aligne les éléments horizontalement */
+    justify-content: flex-end; /* Aligne les éléments à droite */
+  }
+
+  .nav-menu ul {
+    display: flex; /* Affiche le menu en ligne */
+    gap: 20px; /* Espacement entre les items du menu */
+    flex-direction: row; /* Assurez-vous que les éléments sont en ligne */
+  }
+
+  .nav-menu li {
+    margin: 0; /* Pas de marge autour des éléments de la liste */
+  }
+
+  .nav-menu li a {
+    font-size: 18px; /* Taille de la police pour les liens */
+    color: white;
+  }
+
+  .nav-menu li a:hover {
+    color: #f591a2; /* Couleur au survol */
+  }
+
+  .pack .titre {
+    margin-bottom: 100px;
+  }
+
+  .pack .container {
+    display: flex;
+    flex-direction: row; /* Aligne les éléments en ligne */
+    align-items: center; /* Centre les éléments verticalement */
+    justify-content: center; /* Centre les éléments horizontalement */
+    text-align: center; /* Centre le texte */
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+  }
+
+  .grid__item {
+    display: flex;
+    flex-direction: column; /* Aligne les éléments internes verticalement */
+    align-items: center; /* Centre les éléments horizontalement */
+    text-align: center; /* Centre le texte */
+    transition: transform 0.3s; /* Transition pour l'effet hover */
+    margin-bottom: 100px;
+    width: 45%; /* Chaque item prend 45% de la largeur */
+    margin: 0 2.5%; /* Espace entre les items pour un total de 100% */
+  }
+
+  .evaluations-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* alignement à gauche */
+    gap: 30px;
+  }
+
+  .evaluation-card {
+    flex: 1 0 220px; /* largeur min 220px, s'étend si possible */
+  }
+}
+
