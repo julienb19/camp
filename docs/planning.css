@@ -1,3 +1,7 @@
+/* =========================
+   MOBILE-FIRST CSS
+   ========================= */
+
 /* Style de base */
 * {
   margin: 0;
@@ -6,17 +10,16 @@
   font-family: "Alice", serif;
 }
 
-/* Global */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background: #f5f7fa;
-  margin: 0;
-  padding: 0 auto;
-  color: #333;
   background-color: #f5f5f5;
-  padding-top: 70px; /* Évite que le contenu soit caché sous le header */
+  color: #333;
+  padding-top: 70px; /* espace pour header fixe */
 }
 
+/* =========================
+   HEADER
+   ========================= */
 .header {
   position: fixed;
   top: 0;
@@ -28,27 +31,24 @@ body {
 }
 
 .header .container {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 0 20px;
+  gap: 10px;
 }
 
-.logo h6{
+.logo h6 {
   font-size: 18px;
   color: rgb(237, 238, 239);
-  font-family: 'Alice', serif;
 }
 
-/* Burger centré */
+/* Burger menu */
 .burger-menu {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* pour les barres absolues */
+  position: relative;
+  width: 100%;
 }
 
 .burger {
@@ -61,7 +61,7 @@ body {
   background: transparent;
   border: none;
   padding: 0;
-  position: relative; /* important */
+  position: relative;
   z-index: 1100;
 }
 
@@ -71,10 +71,9 @@ body {
   background-color: white;
   border-radius: 2px;
   transition: all 0.3s ease;
-  position: relative; /* pour animation */
+  position: relative;
 }
 
-/* Animation croix */
 .burger.open .bar:nth-child(1) {
   transform: rotate(45deg);
   position: absolute;
@@ -95,7 +94,7 @@ body {
   transform-origin: center;
 }
 
-/* Menu de navigation */
+/* Navigation */
 .nav-menu {
   position: fixed;
   top: -100%;
@@ -117,15 +116,10 @@ body {
 
 .nav-menu ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
-  flex-direction: column; /* Par défaut, en colonne pour les petits écrans */
+  flex-direction: column;
   align-items: center;
-}
-
-.nav-menu li {
-  margin: 20px 0;
+  gap: 20px;
 }
 
 .nav-menu li a {
@@ -140,27 +134,29 @@ body {
   color: #f38399;
 }
 
+/* =========================
+   TITRE PRINCIPAL
+   ========================= */
 .container h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-family: 'Alice', serif;
+  font-family: "Alice", serif;
   font-weight: 400;
   font-size: 2.5rem;
-
-  /* Dégradé fun */
-  background:#ed5979;
+  text-align: center;
+  padding: 30px 20px;
+  background: #ed5979;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
 }
 
+/* =========================
+   IMAGE
+   ========================= */
 .image {
   display: flex;
-  justify-content: center;   /* centre l’image horizontalement */
-  align-items: center;       /* centre verticalement si besoin */
+  justify-content: center;
+  align-items: center;
   padding: 40px 20px;
 }
 
@@ -172,34 +168,34 @@ body {
 
 .image .grid-item img {
   width: 100%;
-  max-width: 400px; /* limite la taille */
-  border-radius: 20px; /* coins arrondis */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* ombre moderne */
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  object-fit: cover; /* garde un rendu clean */
+  object-fit: cover;
 }
 
-/* Effet au survol */
 .image .grid-item img:hover {
-  transform: scale(1.05); /* léger zoom */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); /* ombre plus marquée */
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* intro */
-
+/* =========================
+   INTRO
+   ========================= */
 .intro {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 20px 30px;
+  max-width: 90%;
+  margin: 40px auto;
+  padding: 20px;
   text-align: center;
   font-family: "Alice", serif;
-  color: #2c3e50; /* texte plus élégant et contrasté */
+  color: #2c3e50;
 }
 
 .intro h2 {
   font-size: 2.2rem;
   margin-bottom: 20px;
-  color: #ed5979;  /* bleu moderne */
+  color: #ed5979;
   letter-spacing: 1px;
 }
 
@@ -207,15 +203,16 @@ body {
   font-size: 1.15rem;
   line-height: 1.7;
   margin-bottom: 15px;
-  color: #444; /* légèrement plus clair que le titre */
+  color: #444;
 }
 
 .intro strong {
-  color: #f15f86; /* met en valeur les mots importants */
+  color: #f15f86;
 }
 
-/* Chaque bloc "jour" centré et harmonisé */
-
+/* =========================
+   EMPLOI DU TEMPS
+   ========================= */
 .emploi-du-temps {
   padding: 60px 20px;
   background: #fff;
@@ -223,61 +220,49 @@ body {
 
 .emploi-du-temps h2 {
   font-size: 2.2rem;
-  margin-bottom: 40px;
   text-align: center;
-  font-family: "Alice", serif;
+  margin-bottom: 40px;
   font-weight: 400;
   color: #ed5979;
-  letter-spacing: 1px;
 }
 
 .day {
-  width: 90%;             /* S'adapte à l'écran */
-  max-width: 700px;        /* Largeur max pour l'élégance */
-  margin: 1rem auto;       /* Centre automatiquement */
+  width: 90%;
+  max-width: 700px;
+  margin: 1rem auto;
 }
 
 .day:hover {
   transform: scale(1.01);
 }
 
-/* Boutons des jours */
 .day > button {
   width: 100%;
   padding: 1rem 1.5rem;
   border: none;
-  border-radius: 12px; /* arrondi moderne */
-  
-  background: linear-gradient(135deg, #fa7e80, #f35d90); /* dégradé élégant */
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fa7e80, #f35d90);
   color: #fff;
-  
   font-size: 1.1rem;
   font-weight: 600;
   text-align: left;
   cursor: pointer;
-  outline: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  /* Effet relief */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 
-              inset 0 -2px 4px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), inset 0 -2px 4px rgba(255,255,255,0.2);
   transition: all 0.3s ease;
 }
 
-/* Effet au survol */
 .day > button:hover {
-  transform: translateY(-2px); /* léger effet de "soulèvement" */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 
-              inset 0 -2px 6px rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2), inset 0 -2px 6px rgba(255,255,255,0.25);
   background: linear-gradient(135deg, #f96a6d, #ec4b86);
 }
 
-/* Effet au clic */
 .day > button:active {
-  transform: translateY(1px); /* bouton enfoncé */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2) inset;
+  transform: translateY(1px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2) inset;
 }
 
 .day > button::after {
@@ -290,7 +275,6 @@ body {
   transform: rotate(180deg);
 }
 
-/* Contenu des matières */
 .content {
   max-height: 0;
   overflow: hidden;
@@ -300,11 +284,10 @@ body {
 }
 
 .content.open {
-  max-height: 1000px; /* assez grand pour contenir tout */
+  max-height: 1000px;
   padding: 1rem 1.5rem;
 }
 
-/* Matières (avec code couleur) */
 .matiere, .split div {
   padding: 0.6rem 1rem;
   margin: 0.3rem 0;
@@ -312,20 +295,18 @@ body {
   font-size: 0.95rem;
 }
 
-/* Codes couleurs par matière */
-.hist { background: #ffe0b2; }     /* Histoire */
-.eps { background: #c8e6c9; }     /* EPS */
-.svt { background: #d1c4e9; }     /* SVT */
-.tech { background: #b3e5fc; }    /* Technologie */
-.esp { background: #ffccbc; }     /* Espagnol */
-.fr { background: #f8bbd0; }      /* Français */
-.art { background: #e1bee7; }     /* Arts */
-.math { background: #bbdefb; }    /* Maths */
-.ang { background: #c5cae9; }     /* Anglais */
-.pc { background: #b2dfdb; }      /* Physique */
-.mus { background: #f0f4c3; }     /* Musique */
+.hist { background: #ffe0b2; }
+.eps { background: #c8e6c9; }
+.svt { background: #d1c4e9; }
+.tech { background: #b3e5fc; }
+.esp { background: #ffccbc; }
+.fr { background: #f8bbd0; }
+.art { background: #e1bee7; }
+.math { background: #bbdefb; }
+.ang { background: #c5cae9; }
+.pc { background: #b2dfdb; }
+.mus { background: #f0f4c3; }
 
-/* Split (2 colonnes côte à côte) */
 .split {
   display: flex;
   gap: 1rem;
@@ -335,7 +316,9 @@ body {
   flex: 1;
 }
 
-/* section aganda */
+/* =========================
+   AGENDA / TIMELINE
+   ========================= */
 .agenda {
   padding: 40px 20px;
   background: #fff;
@@ -344,8 +327,8 @@ body {
 .agenda h2 {
   font-size: 2rem;
   margin-bottom: 30px;
-  color: #ed5979;
   text-align: center;
+  color: #ed5979;
   letter-spacing: 1px;
 }
 
@@ -357,7 +340,7 @@ body {
   margin: 0 auto;
   position: relative;
   padding-left: 20px;
-  border-left: 3px solid #f15f86; /* ligne verticale */
+  border-left: 3px solid #f15f86;
 }
 
 .event {
@@ -371,7 +354,7 @@ body {
 }
 
 .event:hover {
-  transform: translateX(5px); /* petit effet au survol */
+  transform: translateX(5px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.1);
 }
 
@@ -388,13 +371,14 @@ body {
   margin: 0;
 }
 
-/* === FOOTER === */
+/* =========================
+   FOOTER
+   ========================= */
 footer {
   width: 100%;
   background: linear-gradient(135deg, #f96a6d, #ec4b86);
   color: white;
   padding: 40px 20px;
-  font-family: "Alice", serif;
 }
 
 footer .container {
@@ -432,7 +416,7 @@ footer .contact a {
 }
 
 footer .contact a:hover {
-  color: #ffe1ec; /* couleur plus claire au survol */
+  color: #ffe1ec;
 }
 
 footer .copyright p {
@@ -440,62 +424,42 @@ footer .copyright p {
   color: #fddde6;
 }
 
-/* Media query pour les grands écrans */
+/* =========================
+   DESKTOP MEDIA QUERY
+   ========================= */
 @media screen and (min-width: 750px) {
+  .header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
   .burger {
-    display: none; /* Cacher le burger sur grands écrans */
+    display: none;
   }
 
   .nav-menu {
-    position: static; /* Position normale pour le menu */
-    background-color: transparent; /* Fond transparent */
-    height: auto; /* Hauteur automatique */
-    flex-direction: row; /* Aligne les éléments horizontalement */
-    justify-content: flex-end; /* Aligne les éléments à droite */
+    position: static;
+    height: auto;
+    flex-direction: row;
+    justify-content: flex-end;
+    background: transparent;
   }
 
   .nav-menu ul {
-    display: flex; /* Affiche le menu en ligne */
-    gap: 20px; /* Espacement entre les items du menu */
-    flex-direction: row; /* Assurez-vous que les éléments sont en ligne */
-  }
-
-  .nav-menu li {
-    margin: 0; /* Pas de marge autour des éléments de la liste */
+    flex-direction: row;
+    gap: 20px;
   }
 
   .nav-menu li a {
-    font-size: 18px; /* Taille de la police pour les liens */
-    color: white;
+    font-size: 18px;
   }
 
-  .nav-menu li a:hover {
-    color: #f591a2; /* Couleur au survol */
+  .day {
+    width: 700px;
   }
 
-  .pack .titre {
-    margin-bottom: 100px;
-  }
-
-  .pack .container {
-    display: flex;
-    flex-direction: row; /* Aligne les éléments en ligne */
-    align-items: center; /* Centre les éléments verticalement */
-    justify-content: center; /* Centre les éléments horizontalement */
-    text-align: center; /* Centre le texte */
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: 100px;
-  }
-
-  .grid__item {
-    display: flex;
-    flex-direction: column; /* Aligne les éléments internes verticalement */
-    align-items: center; /* Centre les éléments horizontalement */
-    text-align: center; /* Centre le texte */
-    transition: transform 0.3s; /* Transition pour l'effet hover */
-    margin-bottom: 100px;
-    width: 45%; /* Chaque item prend 45% de la largeur */
-    margin: 0 2.5%; /* Espace entre les items pour un total de 100% */
+  .split {
+    flex-direction: row;
   }
 }
