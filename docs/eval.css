@@ -103,7 +103,7 @@ body {
    ========================= */
 .nav-menu {
   position: fixed;
-  top: -100%;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
@@ -112,12 +112,17 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: top 0.5s ease;
   z-index: 1000;
+
+  /* Nouveaux ajouts */
+  opacity: 0;             /* invisible */
+  pointer-events: none;   /* désactivé */
+  transition: opacity 0.5s ease;
 }
 
 .nav-menu.open {
-  top: 0;
+  opacity: 1;
+  pointer-events: auto;   /* actif */
 }
 
 .nav-menu ul {
@@ -481,12 +486,15 @@ footer .copyright p {
   }
 
   .nav-menu {
-    position: static;
-    height: auto;
-    flex-direction: row;
-    justify-content: flex-end;
-    background: transparent;
-  }
+  position: static;
+  height: auto;
+  flex-direction: row;
+  justify-content: flex-end;
+  background: transparent;
+
+  opacity: 1;             /* toujours visible */
+  pointer-events: auto;   /* cliquable */
+}
 
   .nav-menu ul {
     flex-direction: row;
