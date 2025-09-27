@@ -284,6 +284,7 @@ footer .contact a:hover {
     flex-direction: row;
     justify-content: space-between;
     padding: 0 20px;
+    z-index: 1000;
   }
 
   .burger {
