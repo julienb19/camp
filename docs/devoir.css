@@ -219,6 +219,201 @@ body {
   color: #f15f86;
 }
 
+/* =========================
+   EVALUATIONS
+   ========================= */
+.evaluations-section {
+  width: 100%;
+  padding: 60px 20px;
+  background: #f5f5f5;
+}
+
+.evaluations-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.evaluation-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  max-width: 240px;
+  width: 100%;
+  position: relative;
+}
+
+.evaluation-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.evaluation-card h3 {
+  font-family: "Alice", serif;
+  font-size: 1rem;
+  margin: 12px 0 15px;
+  color: #c75edc;
+}
+
+.evaluation-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.evaluation-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 35px rgba(236, 75, 134, 0.25);
+}
+
+.evaluation-card:hover img {
+  transform: scale(1.1);
+}
+
+.evaluation-card::before {
+  content: "Devoirs";
+  position: absolute;
+  top: 10px;
+  left: -35px;
+  background: linear-gradient(135deg, #c489da, #a94ab5);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 5px 40px;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   NOTES
+   ========================= */
+.note-point {
+  width: 100%;
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.note-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.note-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  max-width: 240px;
+  width: 100%;
+  position: relative;
+}
+
+.note-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.note-card h3 {
+  font-family: "Alice", serif;
+  font-size: 1rem;
+  margin: 12px 0 15px;
+  color: #37c49c;
+}
+
+.note-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 35px rgba(236, 75, 134, 0.25);
+}
+
+.note-card:hover img {
+  transform: scale(1.1);
+}
+
+.note-card::before {
+  content: "Agenda";
+  position: absolute;
+  top: 10px;
+  left: -35px;
+  background: linear-gradient(135deg, #64fade, #1ab49a);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 5px 40px;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   LIGHTBOX
+   ========================= */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.lightbox .prev,
+.lightbox .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  padding: 20px;
+  transform: translateY(-50%);
+}
+
+.lightbox .prev {
+  left: 20px;
+}
+
+.lightbox .next {
+  right: 20px;
+}
+
+.lightbox .prev:hover,
+.lightbox .next:hover {
+  color: #f15f86;
+}
+
 
 /* =========================
    FOOTER
@@ -284,6 +479,19 @@ footer .contact a:hover {
 
   .image .grid-item img {
     max-width: 400px;
+  }
+
+  .evaluations-container,
+  .note-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 30px;
+  }
+
+  .evaluation-card,
+  .note-card {
+    flex: 1 0 220px;
   }
 
   footer .container {
