@@ -167,6 +167,33 @@ body {
   color: transparent;
 }
 
+.titre {
+  max-width: 90%;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  font-family: "Alice", serif;
+  color: #2c3e50;
+}
+
+.titre h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #f3322b;
+  letter-spacing: 1px;
+}
+
+.titre p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.titre strong {
+  color: #f15f86;
+}
+
 /* =========================
    IMAGE
    ========================= */
@@ -220,21 +247,6 @@ body {
   color: #f15f86;
 }
 
-.info {
-  max-width: 90%;
-  margin: 40px auto;
-  padding: 20px;
-  text-align: center;
-  font-family: "Alice", serif;
-  color: #2c3e50;
-}
-
-.info h2 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: #ee3838;
-  letter-spacing: 1px;
-}
 
 /* =========================
    CARDS SECTION
