@@ -220,6 +220,22 @@ body {
   color: #f15f86;
 }
 
+.info {
+  max-width: 90%;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  font-family: "Alice", serif;
+  color: #2c3e50;
+}
+
+.info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #ee3838;
+  letter-spacing: 1px;
+}
+
 /* =========================
    CARDS SECTION
    ========================= */
